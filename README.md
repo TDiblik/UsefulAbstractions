@@ -2,6 +2,8 @@
 
 Repo for nuget package, containing useful abstractions for C# programs.
 
+Link to see source code on Github: https://github.com/TDiblik/UsefulAbstractions
+
 ## Deployment
 
 1. Update version in file `build.ps1`
