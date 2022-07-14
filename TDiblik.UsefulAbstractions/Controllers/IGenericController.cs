@@ -14,7 +14,7 @@ namespace TDiblik.UsefulAbstractions.Controllers
     /// <typeparam name="I">Type of your ID, intended usage: string/int </typeparam>
     public interface IGenericController<T, I> 
         where T : class 
-        where I : struct
+        where I : notnull
     {
         /// <summary>
         ///
