@@ -1,6 +1,6 @@
 ﻿namespace TDiblik.UsefulAbstractions.Services
 {
-    public interface IEmailSenderService
+    public interface IGenericEmailSenderService
     {
         public void SendMail(string[] To, string Subject, string Body);
     }
