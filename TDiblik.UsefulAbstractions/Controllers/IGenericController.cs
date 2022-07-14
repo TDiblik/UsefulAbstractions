@@ -2,7 +2,19 @@
 
 namespace TDiblik.UsefulAbstractions.Controllers
 {
-    public interface IGenericController<T> where T : class
+    /// <summary>
+    /// <para>
+    /// You should create interface, that describes your Controller and base it from this interface.
+    /// </para>
+    /// <para>
+    /// You should NEVER base controller on this interface
+    /// </para>
+    /// </summary>
+    /// <typeparam name="T">Your model</typeparam>
+    /// <typeparam name="I">Type of your ID, intended usage: string/int </typeparam>
+    public interface IGenericController<T, I> 
+        where T : class 
+        where I : struct
     {
         /// <summary>
         ///
@@ -33,7 +45,7 @@ namespace TDiblik.UsefulAbstractions.Controllers
         /// [HttpGet("{id}")]
         /// [ProducesResponseType(StatusCodes.Status200OK)]
         /// [ProducesResponseType(StatusCodes.Status404NotFound)]
-        /// public async ... GetById([FromRoute] int id);
+        /// public async ... GetById([FromRoute] I id);
         ///
         /// </code>
         /// </example>
@@ -43,7 +55,7 @@ namespace TDiblik.UsefulAbstractions.Controllers
         /// </para>
         ///
         /// </summary>
-        public Task<IActionResult> GetById(int id);
+        public Task<IActionResult> GetById(I id);
 
         /// <summary>
         ///
@@ -75,7 +87,7 @@ namespace TDiblik.UsefulAbstractions.Controllers
         /// [HttpPut("{id}")]
         /// [ProducesResponseType(StatusCodes.Status200OK)]
         /// [ProducesResponseType(StatusCodes.Status404NotFound)]
-        /// public async ... Put([FromRoute] int id, [FromBody] T item);
+        /// public async ... Put([FromRoute] I id, [FromBody] T item);
         ///
         /// </code>
         /// </example>
@@ -85,7 +97,7 @@ namespace TDiblik.UsefulAbstractions.Controllers
         /// </para>
         ///
         /// </summary>
-        public Task<IActionResult> Put(int id, T item);
+        public Task<IActionResult> Put(I id, T item);
 
         /// <summary>
         ///
@@ -96,7 +108,7 @@ namespace TDiblik.UsefulAbstractions.Controllers
         /// [HttpDelete("{id}")]
         /// [ProducesResponseType(StatusCodes.Status200OK)]
         /// [ProducesResponseType(StatusCodes.Status404NotFound)]
-        /// public async ... Delete([FromRoute] int id);
+        /// public async ... Delete([FromRoute] I id);
         ///
         /// </code>
         /// </example>
@@ -106,6 +118,6 @@ namespace TDiblik.UsefulAbstractions.Controllers
         /// </para>
         ///
         /// </summary>
-        public Task<IActionResult> Delete(int id);
+        public Task<IActionResult> Delete(I id);
     }
 }

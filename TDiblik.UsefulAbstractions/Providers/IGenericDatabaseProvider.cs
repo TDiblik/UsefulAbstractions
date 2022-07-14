@@ -3,9 +3,18 @@
 namespace TDiblik.UsefulAbstractions.Providers
 {
     /// <summary>
+    /// <para>
+    /// You should create interface, that describes your DatabaseProvider and base it from this interface. (as seen in example)
+    /// </para>
+    /// <para>
+    /// You should NEVER base DatabaseProvider (DevDatabaseProvider in this example) on this interface
+    /// </para>
     /// <example>
     /// Example implementation:
     /// <code>
+    /// public interface IDatabaseProvider : IGenericDatabaseProvider 
+    /// {
+    /// }
     ///
     /// public class DevDatabaseProvider : IDatabaseProvider
     /// {
@@ -29,7 +38,7 @@ namespace TDiblik.UsefulAbstractions.Providers
     /// </code>
     /// </example>
     /// </summary>
-    public interface IDatabaseProvider
+    public interface IGenericDatabaseProvider
     {
         public IDbConnection GetConnection();
     }
