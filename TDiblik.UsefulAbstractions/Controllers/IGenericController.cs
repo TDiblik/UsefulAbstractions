@@ -3,12 +3,6 @@
 namespace TDiblik.UsefulAbstractions.Controllers
 {
     /// <summary>
-    /// <para>
-    /// You should create interface, that describes your Controller and base it from this interface.
-    /// </para>
-    /// <para>
-    /// You should NEVER base controller on this interface
-    /// </para>
     /// </summary>
     /// <typeparam name="T">Your model</typeparam>
     /// <typeparam name="I">Type of your ID, intended usage: string/int </typeparam>
